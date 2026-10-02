@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scary Baboon 2.0 | Privacy Policy</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #eeeeee;
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.035), transparent 30%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.025), transparent 30%);
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(
+                rgba(255,255,255,0.015) 50%,
+                transparent 50%
+            );
+            background-size: 100% 4px;
+            opacity: 0.18;
+            z-index: 10;
+        }
+
+        .background {
+            position: fixed;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .orb {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.08;
+            animation: float 12s ease-in-out infinite;
+        }
+
+        .orb.one {
+            background: #ffffff;
+            top: -200px;
+            left: -150px;
+        }
+
+        .orb.two {
+            background: #777777;
+            bottom: -250px;
+            right: -150px;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(50px, 30px) scale(1.1);
+            }
+        }
+
+        .container {
+            width: min(1050px, calc(100% - 40px));
+            margin: auto;
+        }
+
+        header {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 100px 0 70px;
+        }
+
+        .hero {
+            animation: heroIn 1s cubic-bezier(.2,.8,.2,1) forwards;
+            opacity: 0;
+            transform: translateY(35px);
+        }
+
+        @keyframes heroIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 8px 14px;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 999px;
+            color: #aaa;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            background: rgba(255,255,255,0.025);
+        }
+
+        h1 {
+            font-size: clamp(48px, 9vw, 100px);
+            line-height: 0.95;
+            letter-spacing: -5px;
+            margin-bottom: 25px;
+        }
+
+        h1 span {
+            display: block;
+            color: #888;
+        }
+
+        .intro {
+            max-width: 650px;
+            margin: auto;
+            color: #999;
+            font-size: 18px;
+        }
+
+        .updated {
+            margin-top: 25px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        main {
+            padding-bottom: 120px;
+        }
+
+        .policy {
+            display: grid;
+            gap: 20px;
+        }
+
+        .section {
+            padding: 35px;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            background: rgba(255,255,255,0.025);
+            backdrop-filter: blur(15px);
+            opacity: 0;
+            transform: translateY(35px);
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s cubic-bezier(.2,.8,.2,1),
+                border-color 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section:hover {
+            border-color: rgba(255,255,255,0.16);
+            background: rgba(255,255,255,0.04);
+        }
+
+        .section-number {
+            color: #555;
+            font-size: 12px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 25px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        p {
+            color: #aaa;
+            margin-bottom: 14px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul {
+            padding-left: 22px;
+            color: #aaa;
+        }
+
+        li {
+            margin-bottom: 9px;
+        }
+
+        strong {
+            color: #ddd;
+        }
+
+        .notice {
+            margin-top: 45px;
+            padding: 25px;
+            border-left: 2px solid #777;
+            background: rgba(255,255,255,0.025);
+            color: #999;
+        }
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding: 35px 0;
+            color: #555;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .fade {
+            transition-delay: 0.05s;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                width: min(100% - 25px, 1050px);
+            }
+
+            header {
+                min-height: 65vh;
+                padding: 80px 0 50px;
+            }
+
+            h1 {
+                letter-spacing: -3px;
+            }
+
+            .intro {
+                font-size: 16px;
+            }
+
+            .section {
+                padding: 25px;
+                border-radius: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="background">
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+</div>
+
+<header>
+    <div class="container hero">
+        <div class="eyebrow">Scary Baboon 2.0</div>
+
+        <h1>
+            Privacy
+            <span>Policy</span>
+        </h1>
+
+        <p class="intro">
+            This Privacy Policy explains how Scary Baboon 2.0 may collect,
+            use, and protect information when you play the game.
+        </p>
+
+        <div class="updated">
+            Last updated: October 1, 2026
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="policy">
+
+            <section class="section">
+                <div class="section-number">01</div>
+                <h2>About This Policy</h2>
+
+                <p>
+                    Scary Baboon 2.0 is a multiplayer horror game.
+                    This Privacy Policy explains what information may be
+                    collected while using the game and how that information
+                    may be used.
+                </p>
+
+                <p>
+                    By playing Scary Baboon 2.0, you acknowledge the practices
+                    described in this Privacy Policy.
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="section-number">02</div>
+                <h2>Information We May Collect</h2>
+
+                <p>
+                    Depending on the features you use, Scary Baboon 2.0 may
+                    process information such as:
+                </p>
+
+                <ul>
+                    <li>Your in-game username or display name.</li>
+                    <li>Game and multiplayer information needed to connect you with other players.</li>
+                    <li>Information provided by the platform you use to play the game.</li>
+                    <li>Game settings and gameplay-related information.</li>
+                    <li>Technical information required to operate multiplayer services.</li>
+                </ul>
+
+                <p>
+                    We do not intentionally request sensitive personal
+                    information that is not necessary for the game.
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="section-number">03</div>
+                <h2>How Information Is Used</h2>
+
+                <p>
+                    Information may be used to provide and maintain the game,
+                    operate multiplayer features, save game-related settings,
+                    improve the experience, prevent abuse, and troubleshoot
+                    technical problems.
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="section-number">04</div>
+                <h2>Multiplayer Features</h2>
+
+                <p>
+                    Scary Baboon 2.0 contains multiplayer features that allow
+                    players to interact with other players online.
+                </p>
+
+                <p>
+                    Other players may be able to see information such as your
+                    in-game name and other information that is intentionally
+                    made visible as part of the multiplayer experience.
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="section-number">05</div>
+                <h2>Third-Party Services</h2>
+
+                <p>
+                    Scary Baboon 2.0 may use third-party services to provide
+                    features such as multiplayer networking, authentication,
+                    voice communication, analytics, or platform services.
+                </p>
+
+                <p>
+                    These services may process information according to their
+                    own privacy policies.
+                </p>
+
+                <p>
+                    <strong>
+                        Replace this section with the exact third-party
+                        services used by your game before publishing this policy.
+                    </strong>
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="section-number">06</div>
+                <h2>Voice Communication</h2>
+
+                <p>
+                    If voice communication is available in Scary Baboon 2.0,
+                    voice data may be transmitted through the service used to
+                    provide voice communication.
+                </p>
+
+                <p>
+                    <strong>
+                        If your game does not use voice chat, remove this section.
+                    </strong>
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="section-number">07</div>
+                <h2>Children and Minors</h2>
+
+                <p>
+                    Scary Baboon 2.0 is intended to be used in accordance with
+                    the age requirements and rules of the platform on which it
+                    is distributed.
+                </p>
+
+                <p>
+                    We do not knowingly collect personal information from
+                    children in violation of applicable laws.
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="section-number">08</div>
+                <h2>Data Security</h2>
+
+                <p>
+                    Reasonable measures are taken to protect information
+                    associated with the game. However, no online service can
+                    guarantee that information transmitted over the internet
+                    will always be completely secure.
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="section-number">09</div>
+                <h2>Data Retention</h2>
+
+                <p>
+                    Information may be retained for as long as reasonably
+                    necessary to provide the game's features, maintain
+                    multiplayer services, comply with legal obligations, or
+                    resolve disputes.
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="section-number">10</div>
+                <h2>Your Choices</h2>
+
+                <p>
+                    Depending on the platform and services used by the game,
+                    you may have rights regarding information associated with
+                    your account or use of the game.
+                </p>
+
+                <p>
+                    Requests regarding personal information can be made using
+                    the contact information provided below.
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="section-number">11</div>
+                <h2>Changes to This Policy</h2>
+
+                <p>
+                    This Privacy Policy may be updated from time to time.
+                    Changes will be posted on this page, along with an updated
+                    revision date.
+                </p>
+            </section>
+
+            <section class="section">
+                <div class="section-number">12</div>
+                <h2>Contact</h2>
+
+                <p>
+                    If you have questions about this Privacy Policy or how
+                    information is handled in Scary Baboon 2.0, contact us at:
+                </p>
+
+                <p>
+                    <strong>basck3536@gmail.com</strong>
+                </p>
+            </section>
+
+        </div>
+
+        <div class="notice">
+            This Privacy Policy should be reviewed and customized to match
+            the actual services, data collection, age requirements, and
+            features used by Scary Baboon 2.0 before it is published.
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        © 2026 Scary Baboon 2.0. All rights reserved.
+    </div>
+</footer>
+
+<script>
+    const sections = document.querySelectorAll(".section");
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+    sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
